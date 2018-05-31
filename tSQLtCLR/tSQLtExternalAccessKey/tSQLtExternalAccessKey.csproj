@@ -53,7 +53,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>SigningKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>FTIConsulting.PublicKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -73,7 +73,11 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <OutputPath>bin\CruiseControl\</OutputPath>
   </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>true</DelaySign>
+  </PropertyGroup>
   <ItemGroup>
+    <None Include="FTIConsulting.PublicKey.snk" />
     <None Include="SigningKey.pfx" />
   </ItemGroup>
   <ItemGroup>

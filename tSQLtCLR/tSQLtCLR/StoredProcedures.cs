@@ -22,6 +22,18 @@ namespace tSQLtCLR
             filter.sendSelectedResultSetToSqlContext(resultSetNo, command);
         }
 
+        public static void ResultSetFillTable(SqlString tablesString, SqlString command)
+        {
+            TableFiller filler = new TableFiller(new TestDatabaseFacade());
+            filler.SendResultSetToTables(tablesString, command, SqlBoolean.False);
+        }
+
+        public static void ResultSetFillTableCompat(SqlString tablesString, SqlString command)
+        {
+            TableFiller filler = new TableFiller(new TestDatabaseFacade());
+            filler.SendResultSetToTables(tablesString, command, SqlBoolean.True);
+        }
+
         public static void NewConnection(SqlString command)
         {
             CommandExecutor executor = new CommandExecutor();
